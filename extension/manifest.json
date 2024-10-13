@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "OTT APP SYNC Extension",
+  "version": "1.0",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Video Sync"
+  },
+  "permissions": ["activeTab", "scripting"],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.netflix.com/*",
+        "https://www.youtube.com/*",
+        "https://www.primevideo.com/*"
+      ],
+      "js": ["content.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
